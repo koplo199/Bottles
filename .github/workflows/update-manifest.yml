@@ -7,6 +7,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+
+env:
+  PR_BRANCH: pr/ci-manifest/${{ github.ref_name }}
+
 jobs:
   update-manifest:
     runs-on: ubuntu-latest
@@ -41,9 +45,18 @@ jobs:
         with:
           args: --update --require-important-update --commit-only --never-fork "bottles-repository/com.usebottles.bottles.yml"
 
-      - name: Update requirements
+      - name: Create PR if necessary
         working-directory: "bottles-repository"
+        shell: bash {0}
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git push -f -u origin HEAD
+          git checkout -B ${{ env.PR_BRANCH }}
+          git push -f --set-upstream origin ${{ env.PR_BRANCH }}
+          git diff --exit-code com.usebottles.bottles.yml
+          updated=$?
+          if [ $updated -ne 0 ]; then
+            gh pr create --title "Update manifest (important)" --body "One or more dependencies marked as 'important' have been updated." --head ${{ env.PR_BRANCH }} --base ${{ github.ref_name }}
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
