@@ -57,6 +57,7 @@ jobs:
           updated=$?
           if [ $updated -ne 0 ]; then
             gh pr create --title ":robot: : Update manifest (important)" --body "One or more dependencies marked as 'important' have been updated." --head ${{ env.PR_BRANCH }} --base ${{ github.ref_name }}
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
