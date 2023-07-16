@@ -178,8 +178,8 @@ modules:
       - cp layer/usr/share/vulkan/implicit_layer.d/latencyflex.json /app/share/vulkan/implicit_layer.d/latencyflex.json
     sources:
       - type: archive
-        url: https://github.com/ishitatsuyuki/LatencyFleX/releases/download/v0.1.0/latencyflex-v0.1.0.tar.xz
-        sha256: c992ebd2f43c99ab4a84a6ffce692d9aae4cc2571536a5854ae2e79b6951e78b
+        url: https://github.com/ishitatsuyuki/LatencyFleX/releases/download/v0.1.1/latencyflex-v0.1.1.tar.xz
+        sha256: c992ebd2f43c99ab4a84a6ffce692d9aae4cc2571536a5854ae2e79b6951e78a
         x-checker-data:
           type: json
           is-important: true
@@ -197,8 +197,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick
-        tag: 7.1.1-12
-        commit: d5974ce50c84bee43731270a899d7a4a9500cc16
+        tag: 7.1.1-13
+        commit: d5974ce50c84bee43731270a899d7a4a9500cc17
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
