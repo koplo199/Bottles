@@ -269,7 +269,7 @@ modules:
             commit: 854e56263454077ab009aaff67f1afe0dbd52878
             x-checker-data:
               type: git
-              tag-pattern: ^([\\d.]+)$
+              tag-pattern: '^([\\d.]+)$'
 
   - name: runtime
     buildsystem: simple
