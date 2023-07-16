@@ -53,10 +53,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git checkout -B ${{ env.PR_BRANCH }}
           git push -f --set-upstream origin ${{ env.PR_BRANCH }}
-          git diff --exit-code com.usebottles.bottles.yml
+          git diff ${{ github.ref_name }} --exit-code com.usebottles.bottles.yml
           updated=$?
           if [ $updated -ne 0 ]; then
-            gh pr create --title "Update manifest (important)" --body "One or more dependencies marked as 'important' have been updated." --head ${{ env.PR_BRANCH }} --base ${{ github.ref_name }}
+            gh pr create --title ":bot::Update manifest (important)" --body "One or more dependencies marked as 'important' have been updated." --head ${{ env.PR_BRANCH }} --base ${{ github.ref_name }}
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
