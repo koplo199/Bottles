@@ -44,8 +44,8 @@ sources:
   only-arches:
   - x86_64
 - type: file
-  url: https://files.pythonhosted.org/packages/8e/3f/405eedc699cea7ef0b49c04966701316f63b60ffa49e9dc6bbce5480cae7/pathvalidate-3.0.0-py3-none-any.whl
-  sha256: dcdb89f0bde6fd5eba6f2202a7863f657afbc810ef32f60e9258d58ede8155ac
+  url: https://files.pythonhosted.org/packages/c8/98/e6c836ea547236fffab67503ff691d302f2366fbe3a1e37bfe611e352b3c/pathvalidate-3.1.0-py3-none-any.whl
+  sha256: 912fd1d2e1a2a6a6f98da36a91f21ed86746473810ff625b9c34f3d06c0caa1d
 - type: file
   url: https://files.pythonhosted.org/packages/43/94/52243ddff508780dd2d8110964320ab4851134a55ab102285b46e740f76a/patool-1.12-py2.py3-none-any.whl
   sha256: 3f642549c9a78f5b8bef1af92df385b521d360520d1f34e4dba3fd1dee2a21bc
