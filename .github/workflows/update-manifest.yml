@@ -56,7 +56,7 @@ jobs:
           git diff ${{ github.ref_name }} --exit-code com.usebottles.bottles.yml
           updated=$?
           if [ $updated -ne 0 ]; then
-            gh pr create --title ":bot::Update manifest (important)" --body "One or more dependencies marked as 'important' have been updated." --head ${{ env.PR_BRANCH }} --base ${{ github.ref_name }}
+            gh pr create --title ":robot: : Update manifest (important)" --body "One or more dependencies marked as 'important' have been updated." --head ${{ env.PR_BRANCH }} --base ${{ github.ref_name }}
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
