@@ -7,7 +7,7 @@ requests[use_chardet_on_py3]==2.31.0
 Markdown==3.4.3
 icoextract==0.1.4
 patool==1.12
-pathvalidate==3.0.0
+pathvalidate==3.1.0
 FVS==0.3.4
 orjson==3.9.2
 pycairo==1.24.0

@@ -108,7 +108,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/KhronosGroup/Vulkan-Tools.git
-        tag: 'sdk-1.3.250.1'
+        tag: sdk-1.3.250.1
         commit: 695887a994ef9cc00a7aa3f9c00b31a56ea79534
         x-checker-data:
           type: git
@@ -119,7 +119,7 @@ modules:
         sources:
           - type: git
             url: https://github.com/KhronosGroup/Vulkan-Headers.git
-            tag: 'sdk-1.3.250.1'
+            tag: sdk-1.3.250.1
             commit: 9e61870ecbd32514113b467e0a0c46f60ed222c7
             x-checker-data:
               type: git
@@ -160,7 +160,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.freedesktop.org/xorg/app/xdpyinfo.git
-        tag: "xdpyinfo-1.3.4"
+        tag: xdpyinfo-1.3.4
         commit: ea4083ccb2a5ce4252acabeb2eb7bf49f7be25e0
         x-checker-data:
           type: git
@@ -178,7 +178,7 @@ modules:
       - cp layer/usr/share/vulkan/implicit_layer.d/latencyflex.json /app/share/vulkan/implicit_layer.d/latencyflex.json
     sources:
       - type: archive
-        url: https://github.com/ishitatsuyuki/LatencyFleX/releases/download/v0.1.0/latencyflex-v0.1.0.tar.xz
+        url: https://github.com/ishitatsuyuki/LatencyFleX/releases/download/v0.1.1/latencyflex-v0.1.1.tar.xz
         sha256: c992ebd2f43c99ab4a84a6ffce692d9aae4cc2571536a5854ae2e79b6951e78a
         x-checker-data:
           type: json
@@ -197,7 +197,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick
-        tag: '7.1.1-12'
+        tag: 7.1.1-12
         commit: a09d8dd5e3a92362cf70c184670b23163587e6f8
         x-checker-data:
           type: git
@@ -211,7 +211,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/flatpak/libportal
-        tag: "0.6"
+        tag: '0.6'
         commit: 13df0b887a7eb7b0f9b14069561a41f62e813155
         x-checker-data:
           type: git
@@ -222,7 +222,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/jwestman/blueprint-compiler
-        tag: "v0.8.1"
+        tag: v0.8.1
         commit: aa7679618e864748f4f4d8f15283906e712752fe
         x-checker-data:
           type: git
@@ -235,7 +235,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/TheEvilSkeleton/vkbasalt-cli
-        tag: 'v3.1.1'
+        tag: v3.1.1
         commit: bba740f77357cfa3558f02f6b8decd8f5a8eaf4e
         x-checker-data:
           type: git
@@ -251,7 +251,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/bottlesdevs/EasyTerm
-        tag: '0.2.0'
+        tag: 0.2.0
         commit: 6fbeab0470df55aeab141a45763147440b2f0290
         x-checker-data:
           type: git
@@ -265,7 +265,7 @@ modules:
         sources:
           - type: git
             url: https://gitlab.gnome.org/GNOME/vte
-            tag: '0.72.2'
+            tag: 0.72.2
             commit: 854e56263454077ab009aaff67f1afe0dbd52878
             x-checker-data:
               type: git
