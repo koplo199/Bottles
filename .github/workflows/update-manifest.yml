@@ -9,6 +9,7 @@ on:
 
 
 env:
+  WORKING_BRANCH: ci-manifest/${{ github.ref_name }}
   PR_BRANCH: pr/ci-manifest/${{ github.ref_name }}
 
 jobs:
@@ -19,6 +20,13 @@ jobs:
         with:
           path: "bottles-repository"
           ref: ${{ github.ref_name }}
+
+      - name:  Create or reset ${{ env.WORKING_BRANCH }}
+        working-directory: "bottles-repository"
+        shell: bash {0}
+        run: |
+          git checkout -B ${{ env.WORKING_BRANCH }}
+          git push -f --set-upstream origin ${{ env.WORKING_BRANCH }}
 
       - uses: actions/setup-python@v4
         with:
