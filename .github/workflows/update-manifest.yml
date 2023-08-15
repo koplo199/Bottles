@@ -60,7 +60,7 @@ jobs:
           EMAIL: github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: --update --require-important-update --commit-only --never-fork "bottles-repository/com.usebottles.bottles.yml"
+          args: --update --commit-only --never-fork "bottles-repository/com.usebottles.bottles.yml"
 
       - name: Create PR if necessary
         working-directory: "bottles-repository"
