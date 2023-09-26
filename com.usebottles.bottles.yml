@@ -269,8 +269,8 @@ modules:
       - cp -a * /app/etc/runtime/
     sources:
       - type: archive
-        url: https://github.com/bottlesdevs/runtime/releases/download/0.6.3/runtime-0.6.3.tar.gz
-        sha256: d7749b48927bd782e128e372a1d7085133fbe300eb9193134eb821f61bc5fad6
+        url: https://github.com/koplo199/runtime/releases/download/0.6.3/runtime-0.6.3.tar.gz
+        sha256: 9ef646837176c84a689bb18bb71cf9ab4fc11debc653dffc2822fcc5133aacc6
         x-checker-data:
           type: json
           is-important: true

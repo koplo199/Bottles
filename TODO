@@ -1,0 +1,9 @@
+Investigate:
+- Runners libraries not having piorities in LD_LIBRARY_PATH?
+
+Fix (flatpak):
+- Allow runtime to be updated, and update it automatically
+- Allow runtime to be enabled
+
+Upstream:
+- Update runtime manifest.yml version automatically in GitHub Actions

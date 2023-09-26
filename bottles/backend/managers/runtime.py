@@ -38,22 +38,30 @@ class RuntimeManager:
         return runtimes.get(_filter, False)
 
     @staticmethod
-    def get_runtime_env(_filter: str = "bottles"):
+    def get_runtime_env(_filter: str = "bottles", _append_ld: bool = False):
         runtime = RuntimeManager.get_runtimes(_filter)
+        print("get_runtime_env runtime")
+        print(runtime)
         env = ""
 
         if runtime:
             for p in runtime:
                 if "EasyAntiCheatRuntime" in p or "BattlEyeRuntime" in p:
                     continue
-                env += f":{p}"
-                
+                env += f"{p}:"
+            env=env.removesuffix(":")
         else:
             return False
+        print("get_runtime_env env")
+        print(env)
 
-        ld = os.environ.get('LD_LIBRARY_PATH')
-        if ld:
-            env += f":{ld}"
+        if _append_ld:
+            ld = os.environ.get('LD_LIBRARY_PATH')
+            if ld:
+                env += f":{ld}"
+
+        print("get_runtime_env env +ld")
+        print(env)
 
         return env
 
@@ -82,24 +90,29 @@ class RuntimeManager:
     @staticmethod
     def __get_runtime(paths: list, structure: list):
         def check_structure(found, expected):
+            print("found")
+            print(found)
+            print("expected")
+            print(expected)
             for e in expected:
                 if e not in found:
                     return False
             return True
-
+        print("path: ")
+        print(paths)
+        print("structure: ")
+        print(structure)
         for runtime_path in paths:
             if not os.path.exists(runtime_path):
                 continue
 
             structure_found = []
-            for root, dirs, files in os.walk(runtime_path):
-                for d in dirs:
-                    structure_found.append(d)
+            for dirs in structure:
+                _path = os.path.join(runtime_path, dirs)
+                if os.path.exists(_path):
+                    structure_found.append(dirs)
 
-            if not check_structure(structure_found, structure):
-                return []
-
-            res = [f"{runtime_path}/{s}" for s in structure]
+            res = [f"{runtime_path}/{s}" for s in structure_found]
             eac_path = os.path.join(runtime_path, "EasyAntiCheatRuntime")
             be_path = os.path.join(runtime_path, "BattlEyeRuntime")
 
@@ -108,10 +121,12 @@ class RuntimeManager:
 
             if os.path.isdir(be_path):
                 res.append(be_path)
-
+            
+            print("__get_runtime: ")
+            print(res)
             return res
 
-        return False
+        return []
 
     @staticmethod
     def __get_bottles_runtime():
@@ -119,7 +134,7 @@ class RuntimeManager:
             "/app/etc/runtime",
             Paths.runtimes
         ]
-        structure = ["lib", "lib32"]
+        structure = ["lib/x86_64-linux-gnu", "lib/i386-linux-gnu"]
 
         return RuntimeManager.__get_runtime(paths, structure)
 

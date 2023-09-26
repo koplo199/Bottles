@@ -207,13 +207,16 @@ class WineCommand:
         if (params.use_runtime or params.use_eac_runtime or params.use_be_runtime) \
                 and not self.terminal and not return_steam_env:
             _rb = RuntimeManager.get_runtime_env("bottles")
+            logging.info("_rb: " + _rb)
             if _rb:
                 _eac = RuntimeManager.get_eac()
                 _be = RuntimeManager.get_be()
 
                 if params.use_runtime:
                     logging.info("Using Bottles runtime")
-                    ld += _rb
+                    ld.append(_rb)
+                    logging.info("ld + _rb: ")
+                    logging.info(ld)
 
                 if _eac and not self.minimal:  # NOTE: should check for runner compatibility with "eac" (?)
                     logging.info("Using EasyAntiCheat runtime")
@@ -383,6 +386,10 @@ class WineCommand:
             # Add ld to LD_LIBRARY_PATH
             if ld:
                 env.concat("LD_LIBRARY_PATH", ld)
+                logging.info("ld: ")
+                logging.info(ld)
+                logging.info("env: ")
+                logging.info(env.get()["envs"])
 
         # Vblank
         # env.add("__GL_SYNC_TO_VBLANK", "0")
