@@ -47,8 +47,8 @@ sources:
   url: https://files.pythonhosted.org/packages/d3/5e/76a9d08b4b4e4583f269cb9f64de267f9aeae0dacef23307f53a14211716/pathvalidate-3.2.1-py3-none-any.whl
   sha256: 9a6255eb8f63c9e2135b9be97a5ce08f10230128c4ae7b3e935378b82b22c4c9
 - type: file
-  url: https://files.pythonhosted.org/packages/0e/44/192ede8c7f935643e4c8a56545fcac6ae1b8c50a77f54b2b1c4ab9fcae49/patool-3.0.0-py2.py3-none-any.whl
-  sha256: 928070d5f82a776534a290a52f4758e2c0dd9cd5a633e3f63f7270c8982833b8
+  url: https://files.pythonhosted.org/packages/df/cc/67b2a7ad09ae95ae789c0c731c057a19c69592e3b6c66d53fc3e39a51961/patool-3.0.1-py2.py3-none-any.whl
+  sha256: 0d712d479c90bd3798e8c713069a45b893122578cbaf05241e6183ba4267ada5
 - type: file
   url: https://files.pythonhosted.org/packages/54/16/12b82f791c7f50ddec566873d5bdd245baa1491bac11d15ffb98aecc8f8b/pefile-2024.8.26-py3-none-any.whl
   sha256: 76f8b485dcd3b1bb8166f1128d395fa3d87af26360c2358fb75b80019b957c6f
