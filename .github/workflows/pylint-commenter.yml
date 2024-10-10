@@ -44,7 +44,7 @@ jobs:
 
           echo "PR_NUMBER=$(cat pr-number)" >> $GITHUB_ENV
       - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         with:
           comment_tag: pylint-result-comment
           pr_number: ${{ env.PR_NUMBER }}
